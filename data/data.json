@@ -1,0 +1,155 @@
+[
+  {
+    "nombre": "Shakira - Las Mujeres Ya No Lloran Tour",
+    "lugar": "Estadio Nacional, Lima",
+    "categoria": "concierto",
+    "fecha": "2025-02-17",
+    "hora": "20:00",
+    "imagen": "https://ejemplo.com/imagenes/shakira.jpg"
+  },
+  {
+    "nombre": "Camilo - Nuestro Lugar Feliz Tour",
+    "lugar": "Estadio Nacional, Lima",
+    "categoria": "concierto",
+    "fecha": "2025-02-25",
+    "hora": "20:00",
+    "imagen": "https://ejemplo.com/imagenes/camilo.jpg"
+  },
+  {
+    "nombre": "Gloria Trevi - Haciendo Historia Tour",
+    "lugar": "Costa 21, Lima",
+    "categoria": "concierto",
+    "fecha": "2025-05-24",
+    "hora": "21:00",
+    "imagen": "https://ejemplo.com/imagenes/gloria_trevi.jpg"
+  },
+  {
+    "nombre": "Juntos Otra Vez Tour - Erreway",
+    "lugar": "Costa 21, Lima",
+    "categoria": "concierto",
+    "fecha": "2025-05-03",
+    "hora": "20:00",
+    "imagen": "https://ejemplo.com/imagenes/erreway.jpg"
+  },
+  {
+    "nombre": "Duki - Ameri World Tour",
+    "lugar": "Costa 21, Lima",
+    "categoria": "concierto",
+    "fecha": "2025-08-23",
+    "hora": "20:00",
+    "imagen": "https://ejemplo.com/imagenes/duki.jpg"
+  },
+  {
+    "nombre": "Jon Z en Concierto",
+    "lugar": "Costa 21, Lima",
+    "categoria": "concierto",
+    "fecha": "2025-06-06",
+    "hora": "20:00",
+    "imagen": "https://ejemplo.com/imagenes/jon_z.jpg"
+  },
+  {
+    "nombre": "Emilia - Tour 2025",
+    "lugar": "Costa 21, Lima",
+    "categoria": "concierto",
+    "fecha": "2025-05-08",
+    "hora": "20:00",
+    "imagen": "https://ejemplo.com/imagenes/emilia.jpg"
+  },
+  {
+    "nombre": "Legalmente Rubia - El Musical",
+    "lugar": "Teatro Municipal, Lima",
+    "categoria": "teatro",
+    "fecha": "2025-05-16",
+    "hora": "19:30",
+    "imagen": "https://ejemplo.com/imagenes/legalmente_rubia.jpg"
+  },
+  {
+    "nombre": "El Lago de los Cisnes - Russian Classical Ballet",
+    "lugar": "Gran Teatro Nacional, Lima",
+    "categoria": "teatro",
+    "fecha": "2025-05-11",
+    "hora": "18:00",
+    "imagen": "https://ejemplo.com/imagenes/lago_cisnes.jpg"
+  },
+  {
+    "nombre": "Rata Blanca - 35 Aniversario",
+    "lugar": "Anfiteatro Parque de la Exposición, Lima",
+    "categoria": "concierto",
+    "fecha": "2025-07-25",
+    "hora": "20:00",
+    "imagen": "https://ejemplo.com/imagenes/rata_blanca.jpg"
+  },
+  {
+    "nombre": "Fede Vigevani - El Mundo de Fede Vigevani",
+    "lugar": "Costa 21, Lima",
+    "categoria": "stand up",
+    "fecha": "2025-04-19",
+    "hora": "19:00",
+    "imagen": "https://ejemplo.com/imagenes/fede_vigevani.jpg"
+  },
+  {
+    "nombre": "Festival Andino Latinoamericano - VI Edición",
+    "lugar": "Parque de la Exposición, Lima",
+    "categoria": "festival",
+    "fecha": "2025-06-07",
+    "hora": "10:00",
+    "imagen": "https://ejemplo.com/imagenes/festival_andino.jpg"
+  },
+  {
+    "nombre": "Festival de Jazz del Sur",
+    "lugar": "Parque Central, Buenos Aires",
+    "categoria": "festival",
+    "fecha": "2025-11-03",
+    "hora": "16:00",
+    "imagen": "https://ejemplo.com/imagenes/jazz_festival.jpg"
+  },
+  {
+    "nombre": "Festival Veltrac Music",
+    "lugar": "Barranco Arena, Lima",
+    "categoria": "festival",
+    "fecha": "2025-12-12",
+    "hora": "18:00",
+    "imagen": "https://ejemplo.com/imagenes/veltrac_festival.jpg"
+  },
+  {
+    "nombre": "Danny Ocean - Concierto en Lima",
+    "lugar": "Costa 21, Lima",
+    "categoria": "concierto",
+    "fecha": "2025-07-20",
+    "hora": "21:00",
+    "imagen": "https://ejemplo.com/imagenes/danny_ocean.jpg"
+  },
+  {
+    "nombre": "Carlos Vives - El Rock de Mi Pueblo Vive",
+    "lugar": "Teatro Unifé, Lima",
+    "categoria": "concierto",
+    "fecha": "2025-10-10",
+    "hora": "20:00",
+    "imagen": "https://ejemplo.com/imagenes/carlos_vives.jpg"
+  },
+  {
+    "nombre": "Fito Páez - Concierto en Lima",
+    "lugar": "Club Cultural Lima, Chorrillos",
+    "categoria": "concierto",
+    "fecha": "2025-09-09",
+    "hora": "20:00",
+    "imagen": "https://ejemplo.com/imagenes/fito_paez.jpg"
+  },
+  {
+    "nombre": "Amaranta – Feliz Día Madre Tunantera",
+    "lugar": "Anfiteatro del Parque de la Exposición, Lima",
+    "categoria": "concierto",
+    "fecha": "2025-05-10",
+    "hora": "19:00",
+    "imagen": "https://ejemplo.com/imagenes/amaranta.jpg"
+  },
+  {
+    "nombre": "Legalmente Rubia - El Musical",
+    "lugar": "Teatro Municipal, Lima",
+    "categoria": "teatro",
+    "fecha": "2025-06-06",
+    "hora": "19:00",
+    "imagen": "https://ejemplo.com/imagenes/amaranta.jpg"
+  }
+  ]
+ 
