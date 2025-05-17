@@ -5,7 +5,7 @@
     "categoria": "concierto",
     "fecha": "2025-02-17",
     "hora": "20:00",
-    "imagen": "https://ejemplo.com/imagenes/shakira.jpg"
+    "imagen": "https://currambachannel.com/wp-content/uploads/2024/04/Captura-de-pantalla-2024-04-16-a-las-10.54.10-p.-m.png"
   },
   {
     "nombre": "Camilo - Nuestro Lugar Feliz Tour",
@@ -13,7 +13,7 @@
     "categoria": "concierto",
     "fecha": "2025-02-25",
     "hora": "20:00",
-    "imagen": "https://ejemplo.com/imagenes/camilo.jpg"
+    "imagen": "https://cdn.teleticket.com.pe/especiales/camilo-tour-lima-2025/images/disco-imagen.jpg"
   },
   {
     "nombre": "Gloria Trevi - Haciendo Historia Tour",
@@ -29,7 +29,7 @@
     "categoria": "concierto",
     "fecha": "2025-05-03",
     "hora": "20:00",
-    "imagen": "https://ejemplo.com/imagenes/erreway.jpg"
+    "imagen": "https://cdn.teleticket.com.pe/especiales/erreway-2025/images/disco-imagen.jpg"
   },
   {
     "nombre": "Duki - Ameri World Tour",
@@ -37,7 +37,7 @@
     "categoria": "concierto",
     "fecha": "2025-08-23",
     "hora": "20:00",
-    "imagen": "https://ejemplo.com/imagenes/duki.jpg"
+    "imagen": "https://fullconciertos.pe/wp-content/uploads/2025/02/concierto-duki-en-lima-2025-ameri-world-tour.png"
   },
   {
     "nombre": "Jon Z en Concierto",
@@ -45,7 +45,7 @@
     "categoria": "concierto",
     "fecha": "2025-06-06",
     "hora": "20:00",
-    "imagen": "https://ejemplo.com/imagenes/jon_z.jpg"
+    "imagen": "https://cdn.teleticket.com.pe/especiales/jon-z-2025/images/disco-imagen.jpg"
   },
   {
     "nombre": "Emilia - Tour 2025",
@@ -53,7 +53,7 @@
     "categoria": "concierto",
     "fecha": "2025-05-08",
     "hora": "20:00",
-    "imagen": "https://ejemplo.com/imagenes/emilia.jpg"
+    "imagen": "https://www.tuentrada.com.pe/wp-content/uploads/2025/01/EMILIA-en-lima-2025.jpg"
   },
   {
     "nombre": "Legalmente Rubia - El Musical",
@@ -61,7 +61,7 @@
     "categoria": "teatro",
     "fecha": "2025-05-16",
     "hora": "19:30",
-    "imagen": "https://ejemplo.com/imagenes/legalmente_rubia.jpg"
+    "imagen": "https://mir-s3-cdn-cf.behance.net/projects/404/c224d0223826827.Y3JvcCwxNjAwLDEyNTEsMCwyNDk.jpg"
   },
   {
     "nombre": "El Lago de los Cisnes - Russian Classical Ballet",
@@ -69,7 +69,7 @@
     "categoria": "teatro",
     "fecha": "2025-05-11",
     "hora": "18:00",
-    "imagen": "https://ejemplo.com/imagenes/lago_cisnes.jpg"
+    "imagen": "https://cdn.teleticket.com.pe/especiales/lago-de-los-cisnes-russian-classical-ballet-2025/images/par044_rs.jpg"
   },
   {
     "nombre": "Rata Blanca - 35 Aniversario",
@@ -77,7 +77,7 @@
     "categoria": "concierto",
     "fecha": "2025-07-25",
     "hora": "20:00",
-    "imagen": "https://ejemplo.com/imagenes/rata_blanca.jpg"
+    "imagen": "https://cdn.teleticket.com.pe/especiales/rata-blanca-2025/images/fondo-evento.jpg"
   },
   {
     "nombre": "Fede Vigevani - El Mundo de Fede Vigevani",
@@ -85,7 +85,7 @@
     "categoria": "stand up",
     "fecha": "2025-04-19",
     "hora": "19:00",
-    "imagen": "https://ejemplo.com/imagenes/fede_vigevani.jpg"
+    "imagen": "https://cdn.getcrowder.com/images/cfa07e2a-5b7c-41f2-9af6-3803d9963fa6-banner-mobile.png"
   },
   {
     "nombre": "Festival Andino Latinoamericano - VI Edición",
@@ -93,15 +93,7 @@
     "categoria": "festival",
     "fecha": "2025-06-07",
     "hora": "10:00",
-    "imagen": "https://ejemplo.com/imagenes/festival_andino.jpg"
-  },
-  {
-    "nombre": "Festival de Jazz del Sur",
-    "lugar": "Parque Central, Buenos Aires",
-    "categoria": "festival",
-    "fecha": "2025-11-03",
-    "hora": "16:00",
-    "imagen": "https://ejemplo.com/imagenes/jazz_festival.jpg"
+    "imagen": "https://cdn.teleticket.com.pe/especiales/festival-andino-latinoamericano-vi-edicion/images/fondo-evento-2.jpg"
   },
   {
     "nombre": "Festival Veltrac Music",
