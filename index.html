@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .bg-dark {
+            background-color: #21222B;
+        }
+        .bg-dark-blue{
+            background-color: #292B36;
+        }
+    </style>
+</head>
+
+<body class="bg-dark">
+    <div id="navbarcomponent"></div>
+
+
+    <script type="text/babel" src="js/App.js"></script>
+    <script type="text/babel">
+        ReactDOM.render(<NavBarComponent />, document.getElementById("navbarcomponent"));
+    </script>
+</body>
+
+
+</html>
