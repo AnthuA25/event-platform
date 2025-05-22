@@ -1,7 +1,7 @@
 function NavBarComponent() {
   return (
     <nav className="bg-gray-900 text-blue-200 p-4 flex justify-between items-center">
-      <div className="font-bold text-xl">FlowTicket</div>
+      <a href="/index.html" className="font-bold text-xl hover:text-white transition-colors">FlowTicket</a>
       <ul className="flex gap-4">
         <li><a href="/index.html" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Inicio</a></li>
         <li><a href="/pages/events.html" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Eventos</a></li>
