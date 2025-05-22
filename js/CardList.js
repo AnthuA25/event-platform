@@ -1,6 +1,6 @@
 function CardComponent({ evento }) {
   return (
-    <div className="w-[300px] bg-slate-700 rounded-xl shadow-xl overflow-hidden flex-shrink-0">
+    <div className="w-[300px] bg-slate-700 rounded-xl shadow-xl overflow-hidden flex-shrink-0 flex flex-col">
       <img src={evento.imagen} alt={evento.nombre} className="w-full h-[200px] object-cover" />
 
       <div className="p-4 space-y-2 text-sm">
