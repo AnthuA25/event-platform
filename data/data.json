@@ -101,7 +101,7 @@
     "categoria": "festival",
     "fecha": "2025-12-12",
     "hora": "18:00",
-    "imagen": "https://ejemplo.com/imagenes/veltrac_festival.jpg"
+    "imagen": "https://yoconciertos.com/wp-content/uploads/2023/10/unnamed-3.png"
   },
   {
     "nombre": "Danny Ocean - Concierto en Lima",
@@ -109,7 +109,7 @@
     "categoria": "concierto",
     "fecha": "2025-07-20",
     "hora": "21:00",
-    "imagen": "https://ejemplo.com/imagenes/danny_ocean.jpg"
+    "imagen": "https://cdn.teleticket.com.pe/especiales/danny-ocean-2025/images/fondo-evento.jpg"
   },
   {
     "nombre": "Carlos Vives - El Rock de Mi Pueblo Vive",
@@ -117,7 +117,7 @@
     "categoria": "concierto",
     "fecha": "2025-10-10",
     "hora": "20:00",
-    "imagen": "https://ejemplo.com/imagenes/carlos_vives.jpg"
+    "imagen": "https://bizarro.cl/wp-content/uploads/2025/02/Captura-de-Pantalla-2025-02-20-a-las-3.42.48-p.-m.-1.png"
   },
   {
     "nombre": "Fito Páez - Concierto en Lima",
@@ -125,7 +125,7 @@
     "categoria": "concierto",
     "fecha": "2025-09-09",
     "hora": "20:00",
-    "imagen": "https://ejemplo.com/imagenes/fito_paez.jpg"
+    "imagen": "https://cdn.teleticket.com.pe/especiales/fito-paez-lima-2025/images/fondo-evento.jpg"
   },
   {
     "nombre": "Amaranta – Feliz Día Madre Tunantera",
@@ -141,7 +141,7 @@
     "categoria": "teatro",
     "fecha": "2025-06-06",
     "hora": "19:00",
-    "imagen": "https://ejemplo.com/imagenes/amaranta.jpg"
+    "imagen": "https://cdn.cuponidad.pe/images/Deals/teatrorubia-545.jpg"
   }
   ]
  
