@@ -43,14 +43,13 @@ function EventSlider({ events }) {
             {eventosOrdenados.map((evento, index) => (
               <div
                 key={index}
-                className="w-[300px] bg-slate-700 rounded-xl shadow-xl overflow-hidden flex-shrink-0"
+                className="w-[300px] bg-slate-700 rounded-xl shadow-xl overflow-hidden flex-shrink-0 flex flex-col"
               >
                 <img
                   src={evento.imagen}
                   alt={evento.nombre}
                   className="w-full h-[200px] object-cover"
                 />
-
                 <div className="p-4 space-y-2 text-sm">
                   <div className="flex items-center text-gray-300 text-xs">
                     <i className="fa-solid fa-location-dot mr-2 text-blue-300"></i>
@@ -59,12 +58,9 @@ function EventSlider({ events }) {
                   <h3 className="text-blue-200 font-bold text-base">
                     {evento.nombre}
                   </h3>
-                  <p className="font-semibold text-white text-sm">
-                    {evento.descripcion}
-                  </p>
                 </div>
 
-                <div className="px-4 py-3 flex items-center justify-between text-xs mt-auto">
+                <div className="p-4 py-3 flex items-center justify-between text-xs mt-auto">
                   <span className="bg-gray-800 text-white text-[11px] px-2 py-1 rounded">
                     {evento.categoria}
                   </span>
@@ -152,7 +148,7 @@ function FeaturedEvents({ events }) {
       {/* Fondo con imagen y opacidad */}
       <div className="absolute inset-0">
         <img
-          src="../assets/collage.png" // <-- reemplaza por tu imagen real
+          src="../assets/collage.png" 
           alt="Fondo eventos"
           className="w-full h-full object-cover"
         />
@@ -168,7 +164,7 @@ function FeaturedEvents({ events }) {
           {destacados.map((evento, index) => (
             <div
               key={index}
-              className="w-[300px] bg-slate-700 rounded-xl shadow-xl overflow-hidden flex-shrink-0"
+              className="w-[300px] bg-slate-700 rounded-xl shadow-xl overflow-hidden flex-shrink-0 flex flex-col"
             >
               <img
                 src={evento.imagen}
@@ -266,6 +262,23 @@ function Intro() {
     </section>
   );
 }
+
+// ReactDOM.render(
+//   <NavBarComponent />,
+//   document.getElementById("navbarcomponent")
+// );
+// ReactDOM.render(
+//   <EventSlider />,
+//   document.getElementById("eventslider")
+// );
+// ReactDOM.render(
+//   <FeaturedEvents />,
+//   document.getElementById("featuredevents")
+// );
+// ReactDOM.render(
+//   <FooterComponent />,
+//   document.getElementById("footercomponent")
+// );
 
 function App() {
   const [data, setData] = React.useState([]);
