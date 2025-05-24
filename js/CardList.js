@@ -192,7 +192,7 @@ function CardList() {
   const [dateFilter, setDateFilter] = React.useState("");
   const [sortOrder, setSortOrder] = React.useState("asc");
   React.useEffect(() => {
-    fetch("../data/data.json")
+    fetch("data/data.json")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.error("Error cargando datos:", err));
