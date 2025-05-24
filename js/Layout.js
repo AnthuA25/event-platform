@@ -5,7 +5,7 @@ function NavBarComponent() {
   return (
     <nav className="bg-gray-900 text-blue-200 p-4">
       <div className="flex justify-between items-center">
-        <a href="index.html" className="font-bold text-xl hover:text-white transition-colors">
+        <a href="/" className="font-bold text-xl hover:text-white transition-colors">
           FlowTicket
         </a>
         <button
@@ -16,16 +16,16 @@ function NavBarComponent() {
         </button>
 
         <ul className="hidden md:flex gap-4">
-          <li><a href="index.html" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Inicio</a></li>
-          <li><a href="events.html" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Eventos</a></li>
+          <li><a href="/" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Inicio</a></li>
+          <li><a href="./pages/events.html" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Eventos</a></li>
           <li><a href="#" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">¿Cómo comprar?</a></li>
           <li><a href="#" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Contacto</a></li>
         </ul>
       </div>
       {menuAbierto && (
         <ul className="flex flex-col mt-4 gap-2 md:hidden">
-          <li><a href="index.html" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Inicio</a></li>
-          <li><a href="events.html" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Eventos</a></li>
+          <li><a href="/" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Inicio</a></li>
+          <li><a href="./pages/events.html" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Eventos</a></li>
           <li><a href="#" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">¿Cómo comprar?</a></li>
           <li><a href="#" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Contacto</a></li>
         </ul>
