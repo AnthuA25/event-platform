@@ -1,39 +1,103 @@
 function DetailEvent({ evento, onBack }) {
+  const [cantidades, setCantidades] = React.useState(
+    evento.precios.reduce((acc, p) => ({ ...acc, [p.zona]: 0 }), {})
+  );
+
+  const handleCantidad = (zona, delta) => {
+    setCantidades((prev) => ({
+      ...prev,
+      [zona]: Math.max(0, prev[zona] + delta),
+    }));
+  };
+
+  const resumen = Object.entries(cantidades)
+    .filter(([, cantidad]) => cantidad > 0)
+    .map(([zona, cantidad]) => {
+      const precio = evento.precios.find((p) => p.zona === zona).precio;
+      return { zona, cantidad, total: cantidad * precio };
+    });
+
+  const total = resumen.reduce((sum, r) => sum + r.total, 0);
+
   return (
-    <div className="max-w-3xl mx-auto p-6 rounded-lg text-white">
-      <button
-        onClick={onBack}
-        className="mb-4 px-4 py-2 bg-blue-600 rounded hover:bg-blue-700"
-      >
-        <i class="fa-solid fa-arrow-left"></i>
-      </button>
+    <div className="flex flex-col md:flex-row gap-6 text-white p-6 rounded-lg">
+      <div className="w-full md:w-1/2 flex h-80 gap-4">
+        <button
+          onClick={onBack}
+          className="w-12 h-80 bg-indigo-500 rounded hover:bg-blue-700 flex items-center justify-center"
+        >
+          <i className="fa-solid fa-arrow-left"></i>
+        </button>
+        <div className="flex-1 bg-[#1A1B25] flex items-center justify-center rounded-md overflow-hidden">
+          <img
+            src={evento.imagen}
+            alt={evento.nombre}
+            className="w-full h-full object-contain"
+          />
+        </div>
+      </div>
 
-      <img
-        src={evento.imagen}
-        alt={evento.nombre}
-        className="w-full h-64 object-cover rounded"
-      />
-      <h2 className="text-3xl font-bold mt-4">{evento.nombre}</h2>
-      <p className="mt-2 text-gray-300">{evento.descripcion}</p>
+      <div className="flex-1 space-y-6">
+        <h2 className="text-2xl font-semibold">{evento.nombre}</h2>
+        <div className="flex items-center gap-4 text-sm text-gray-300">
+          <span>
+            📅 {evento.fecha} - {evento.hora} hrs
+          </span>
+          <span>📍 {evento.lugar}</span>
+        </div>
 
-      <div className="mt-4 text-sm text-gray-400">
-        <p>
-          <strong>Lugar:</strong> {evento.lugar}
-        </p>
-        <p>
-          <strong>Categoría:</strong> {evento.categoria}
-        </p>
-        <p>
-          <strong>Fecha:</strong>{" "}
-          {new Date(evento.fecha).toLocaleDateString(undefined, {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </p>
-        <p>
-          <strong>Hora:</strong> {evento.hora} hrs
-        </p>
+        <table className="w-full text-sm text-left mt-4">
+          <thead>
+            <tr className="text-gray-400 border-b border-gray-600">
+              <th className="py-2">Ticket</th>
+              <th>Tarifa Regular</th>
+              <th>Cantidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            {evento.precios.map(({ zona, precio }) => (
+              <tr key={zona} className="border-b border-gray-700">
+                <td className="py-2">{zona}</td>
+                <td>S/{precio.toFixed(2)}</td>
+                <td>
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => handleCantidad(zona, -1)}
+                      className="px-2 bg-gray-700"
+                    >
+                      -
+                    </button>
+                    <span>{cantidades[zona]}</span>
+                    <button
+                      onClick={() => handleCantidad(zona, 1)}
+                      className="px-2 bg-gray-700"
+                    >
+                      +
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <div className="mt-4">
+          <h3 className="font-semibold mb-2">Resumen</h3>
+          <ul className="text-sm text-gray-300 space-y-1">
+            {resumen.map((r, i) => (
+              <li key={i}>
+                {r.cantidad} Ticket {r.zona} - S/{r.total.toFixed(2)}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-2 font-semibold text-white">
+            Total: S/{total.toFixed(2)}
+          </p>
+        </div>
+
+        <button className="bg-indigo-500 hover:bg-indigo-600 px-6 py-2 rounded text-white mt-4">
+          Continuar
+        </button>
       </div>
     </div>
   );
@@ -210,7 +274,7 @@ function CardList() {
       </h2>
       <div className="w-32 h-1 bg-blue-200 mx-auto mb-8 rounded"></div>
 
-      <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col sm:flex-row gap-4 text-sm">
+      <div className="flex flex-wrap justify-center gap-4 py-6 px-4 text-white text-sm">
         <input
           type="text"
           placeholder="Buscar evento..."
@@ -218,38 +282,71 @@ function CardList() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <select
-          className="px-3 py-2 rounded text-black w-full sm:w-1/4"
-          value={genreFilter}
-          onChange={(e) => setGenreFilter(e.target.value)}
-        >
-          <option value="">Todos los géneros</option>
-          <option value="Concierto">Concierto</option>
-          <option value="Teatro">Teatro</option>
-          <option value="Stand Up">Stand Up</option>
-          <option value="Festival">Festival</option>
-        </select>
-        <select
-          className="px-3 py-2 rounded text-black w-full sm:w-1/4"
-          value={dateFilter}
-          onChange={(e) => setDateFilter(e.target.value)}
-        >
-          <option value="">Todas las fechas</option>
-          <option value="today">Hoy</option>
-          <option value="tomorrow">Mañana</option>
-          <option value="this_week">Esta semana</option>
-          <option value="next_week">Próxima semana</option>
-          <option value="this_month">Este mes</option>
-          <option value="jul_2025">Julio 2025</option>
-        </select>
-        <select
-          className="px-3 py-2 rounded text-black w-full sm:w-1/5"
-          value={sortOrder}
-          onChange={(e) => setSortOrder(e.target.value)}
-        >
-          <option value="asc">Ascendente</option>
-          <option value="desc">Descendente</option>
-        </select>
+        <div className="flex items-center gap-2">
+          <label className="text-gray-300">Géneros:</label>
+          <select
+            className=" text-white bg-[#2c2c36] px-3 py-2 rounded focus:outline-none"
+            value={genreFilter}
+            onChange={(e) => setGenreFilter(e.target.value)}
+          >
+            <option value="">Todos los géneros</option>
+            <option value="Concierto">Concierto</option>
+            <option value="Teatro">Teatro</option>
+            <option value="Stand Up">Stand Up</option>
+            <option value="Festival">Festival</option>
+          </select>
+        </div>
+        <div className="flex items-center gap-2">
+          <label className="text-gray-300">Fecha:</label>
+          <select
+            className="bg-[#2c2c36] text-white px-3 py-2 rounded focus:outline-none"
+            value={dateFilter}
+            onChange={(e) => setDateFilter(e.target.value)}
+          >
+            <option value="">Todas las fechas</option>
+            <option value="today">Hoy</option>
+            <option value="tomorrow">Mañana</option>
+            <option value="this_week">Esta semana</option>
+            <option value="next_week">Próxima semana</option>
+            <option value="this_month">Este mes</option>
+            <option value="jul_2025">Julio 2025</option>
+          </select>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-4 h-4 text-blue-200"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path d="M3 16h13M3 12h9M3 8h5M21 16v-8M21 8l-4 4 4 4" />
+          </svg>
+          <span className="text-gray-300">Ordenar</span>
+          <select
+            className="bg-[#2c2c36] text-white px-3 py-2 rounded focus:outline-none"
+            value={sortOrder}
+            onChange={(e) => setSortOrder(e.target.value)}
+          >
+            <option value="asc">Ascendente</option>
+            <option value="desc">Descendente</option>
+          </select>
+
+          <button
+            onClick={() => {
+              setSearch("");
+              setGenreFilter("");
+              setDateFilter("");
+              setSortOrder("asc");
+            }}
+            title="Restablecer filtros"
+            className="ml-2 px-3 py-2 rounded bg-[#414352] hover:bg-[#52546b] transition-colors text-white text-sm"
+          >
+            ⟳
+          </button>
+        </div>
       </div>
 
       <ListComponent data={filteredData} onEventClick={handleEventClick} />
