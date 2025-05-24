@@ -2,7 +2,6 @@
 function Slider() {
   return (
     <div className="relative h-[400px]">
-      {/* Imagen de fondo */}
       <img
         src="../assets/fondo-evento.jpg"
         alt="Fondo evento"
@@ -12,7 +11,6 @@ function Slider() {
       {/* Capa oscura */}
       <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 
-      {/* Texto centrado */}
       <div className="relative z-10 flex items-center justify-center h-full">
         <div className="text-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold">Buenas Noches Latin Tour</h1>
@@ -26,7 +24,7 @@ function Slider() {
 function EventSlider({ events }) {
   const eventosOrdenados = [...events]
     .sort((a, b) => new Date(a.fecha) - new Date(b.fecha))
-    .slice(0, 10); // Puedes ajustar cuántos eventos mostrar
+    .slice(0, 10); 
 
   return (
     <div className="bg-gray-800 py-10 px-4 text-white">
@@ -36,7 +34,7 @@ function EventSlider({ events }) {
         <div className="w-32 h-1 bg-blue-200 mt-2 rounded"></div>
       </div>
 
-      {/* Contenedor centrado y deslizable */}
+      
       <div className="relative">
         <div className="flex justify-center">
           <div className="flex gap-6 overflow-x-auto scrollbar-hide max-w-[1280px] px-4">
@@ -145,7 +143,7 @@ function FeaturedEvents({ events }) {
 
   return (
     <section className="relative py-12 px-4 text-white">
-      {/* Fondo con imagen y opacidad */}
+
       <div className="absolute inset-0">
         <img
           src="../assets/collage.png" 
@@ -155,7 +153,7 @@ function FeaturedEvents({ events }) {
         <div className="absolute inset-0 bg-black opacity-80"></div>
       </div>
 
-      {/* Contenido encima */}
+
       <div className="relative z-10 max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-blue-200 mb-2 text-center">Eventos Destacados</h2>
         <div className="w-32 h-1 bg-blue-200 mx-auto mb-8 rounded"></div>
