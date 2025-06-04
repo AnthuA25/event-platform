@@ -18,16 +18,16 @@ function NavBarComponent() {
         <ul className="hidden md:flex gap-4">
           <li><a href="index.html" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Inicio</a></li>
           <li><a href="events.html" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Eventos</a></li>
-          <li><a href="#" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">¿Cómo comprar?</a></li>
-          <li><a href="#" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Contacto</a></li>
+          <li><a href="howbuy.html" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">¿Cómo comprar?</a></li>
+          <li><a href="contact.html" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Contacto</a></li>
         </ul>
       </div>
       {menuAbierto && (
         <ul className="flex flex-col mt-4 gap-2 md:hidden">
           <li><a href="index.html" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Inicio</a></li>
           <li><a href="events.html" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Eventos</a></li>
-          <li><a href="#" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">¿Cómo comprar?</a></li>
-          <li><a href="#" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Contacto</a></li>
+          <li><a href="howbuy.html" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">¿Cómo comprar?</a></li>
+          <li><a href="contact.html" className="hover:bg-[#414352] py-1 rounded px-2 hover:text-white transition-colors">Contacto</a></li>
         </ul>
       )}
     </nav>
