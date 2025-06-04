@@ -30,7 +30,7 @@ function FinalStep({ evento, resumen, total, onBack }) {
 
   return (
     <div className="text-white p-6 flex gap-8">
-      {/* Izquierda: Info evento + resumen */}
+      {/*  Info evento + resumen */}
       <div className="flex-1 space-y-6">
         <button
           onClick={onBack}
@@ -68,7 +68,7 @@ function FinalStep({ evento, resumen, total, onBack }) {
         </div>
       </div>
 
-      {/* Derecha: Formulario */}
+      {/*  Formulario */}
       <form
         onSubmit={handleSubmit}
         className="flex-1 bg-[#1A1B25] rounded p-6 space-y-6"
