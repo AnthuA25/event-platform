@@ -1,4 +1,166 @@
-function DetailEvent({ evento, onBack }) {
+function FinalStep({ evento, resumen, total, onBack }) {
+  const [formData, setFormData] = React.useState({
+    nombre: "",
+    email: "",
+    telefono: "",
+    metodoPago: "yape",
+    aceptoTerminos: false,
+  });
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.aceptoTerminos) {
+      alert("Debes aceptar los términos y condiciones");
+      return;
+    }
+    if (!formData.nombre || !formData.email || !formData.telefono) {
+      alert("Por favor completa todos los campos");
+      return;
+    }
+    alert("¡Compra realizada con éxito!");
+  };
+
+  return (
+    <div className="text-white p-6 flex gap-8">
+      {/* Izquierda: Info evento + resumen */}
+      <div className="flex-1 space-y-6">
+        <button
+          onClick={onBack}
+          className="bg-indigo-500 hover:bg-blue-700 px-4 py-2 rounded"
+        >
+          ⬅ Volver
+        </button>
+
+        <div className="bg-[#1A1B25] rounded p-4 flex flex-col items-center">
+          <div className="w-64 h-64 bg-gray-800 rounded overflow-hidden mb-4">
+            <img
+              src={evento.imagen}
+              alt={evento.nombre}
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <h2 className="text-2xl font-bold text-center">{evento.nombre}</h2>
+          <p className="text-gray-300 text-center">
+            {evento.fecha} - {evento.hora} hrs
+          </p>
+          <p className="text-gray-300 text-center">📍 {evento.lugar}</p>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold">Resumen de compra</h3>
+          <ul className="text-sm text-gray-300 space-y-2 mt-2">
+            {resumen.map((r, i) => (
+              <li key={i}>
+                {r.cantidad} ticket(s) en zona <strong>{r.zona}</strong> - S/{" "}
+                {r.total.toFixed(2)}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 font-bold text-lg">Total: S/{total.toFixed(2)}</p>
+        </div>
+      </div>
+
+      {/* Derecha: Formulario */}
+      <form
+        onSubmit={handleSubmit}
+        className="flex-1 bg-[#1A1B25] rounded p-6 space-y-6"
+      >
+        <h3 className="text-2xl font-semibold">Datos del comprador</h3>
+
+        <div>
+          <label className="block mb-1" htmlFor="nombre">
+            Nombre completo
+          </label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            value={formData.nombre}
+            onChange={handleChange}
+            className="w-full px-3 py-2 rounded bg-gray-800 text-white focus:outline-none"
+            required
+          />
+        </div>
+
+        <div>
+          <label className="block mb-1" htmlFor="email">
+            Correo electrónico
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full px-3 py-2 rounded bg-gray-800 text-white focus:outline-none"
+            required
+          />
+        </div>
+
+        <div>
+          <label className="block mb-1" htmlFor="telefono">
+            Número de contacto
+          </label>
+          <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            value={formData.telefono}
+            onChange={handleChange}
+            className="w-full px-3 py-2 rounded bg-gray-800 text-white focus:outline-none"
+            required
+          />
+        </div>
+
+        <div>
+          <label className="block mb-1">Método de pago</label>
+          <select
+            name="metodoPago"
+            value={formData.metodoPago}
+            onChange={handleChange}
+            className="w-full px-3 py-2 rounded bg-gray-800 text-white focus:outline-none"
+          >
+            <option value="yape">Yape</option>
+            <option value="tarjeta_debito">Tarjeta de débito</option>
+            <option value="tarjeta_credito">Tarjeta de crédito</option>
+          </select>
+        </div>
+
+        <div className="flex items-center">
+          <input
+            type="checkbox"
+            id="aceptoTerminos"
+            name="aceptoTerminos"
+            checked={formData.aceptoTerminos}
+            onChange={handleChange}
+            className="mr-2"
+            required
+          />
+          <label htmlFor="aceptoTerminos" className="text-sm">
+            Acepto los términos y condiciones
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded text-white w-full"
+        >
+          Confirmar Compra
+        </button>
+      </form>
+    </div>
+  );
+}
+
+function DetailEvent({ evento, onBack, onContinue }) {
   const [cantidades, setCantidades] = React.useState(
     evento.precios.reduce((acc, p) => ({ ...acc, [p.zona]: 0 }), {})
   );
@@ -95,7 +257,10 @@ function DetailEvent({ evento, onBack }) {
           </p>
         </div>
 
-        <button className="bg-indigo-500 hover:bg-indigo-600 px-6 py-2 rounded text-white mt-4">
+        <button
+          className="bg-indigo-500 hover:bg-indigo-600 px-6 py-2 rounded text-white mt-4"
+          onClick={() => onContinue(resumen, total)}
+        >
           Continuar
         </button>
       </div>
@@ -191,6 +356,10 @@ function CardList() {
   const [genreFilter, setGenreFilter] = React.useState("");
   const [dateFilter, setDateFilter] = React.useState("");
   const [sortOrder, setSortOrder] = React.useState("asc");
+  const [showFinalStep, setShowFinalStep] = React.useState(false);
+  const [resumenFinal, setResumenFinal] = React.useState([]);
+  const [totalFinal, setTotalFinal] = React.useState(0);
+
   React.useEffect(() => {
     fetch("data/data.json")
       .then((res) => res.json())
@@ -264,9 +433,36 @@ function CardList() {
       return sortOrder === "asc" ? dateA - dateB : dateB - dateA;
     });
 
-  if (selectedEvent) {
-    return <DetailEvent evento={selectedEvent} onBack={handleBack} />;
+  const handleContinue = (resumen, total) => {
+    setResumenFinal(resumen);
+    setTotalFinal(total);
+    setShowFinalStep(true);
+  };
+
+  const handleFinalBack = () => {
+    setShowFinalStep(false);
+  };
+  if (selectedEvent && !showFinalStep) {
+    return (
+      <DetailEvent
+        evento={selectedEvent}
+        onBack={handleBack}
+        onContinue={handleContinue}
+      />
+    );
   }
+
+  if (selectedEvent && showFinalStep) {
+    return (
+      <FinalStep
+        evento={selectedEvent}
+        resumen={resumenFinal}
+        total={totalFinal}
+        onBack={handleFinalBack}
+      />
+    );
+  }
+
   return (
     <section className="py-10 px-4 text-white">
       <h2 className="text-3xl font-bold text-blue-200 mb-2 text-center">
