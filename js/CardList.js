@@ -151,7 +151,7 @@ function FinalStep({ evento, resumen, total, onBack }) {
 
         <button
           type="submit"
-          className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded text-white w-full"
+          className="bg-indigo-500 hover:bg-green-600 px-6 py-2 rounded text-white w-full"
         >
           Confirmar Compra
         </button>
